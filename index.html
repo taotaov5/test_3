@@ -58,8 +58,63 @@
 		
 	</style>
 
-	<body>
-		<div id="app" >
+	<body><!--在线客服  -->
+			<div class="scrollsidebar" id="scrollsidebar">
+				<div class="side_content">
+					<div class="side_list">
+						<div class="side_title">
+							<a title="隐藏" class="close_btn"><span>关闭</span></a>
+						</div>
+						<div class="side_center">
+							<div class="custom_service" id="sp" style="height:200px">
+								<table border="0px" width="100%" id="tb">
+									<tr>
+										<td></td>
+										<tbody id="td"></tbody>
+									</tr>
+								</table>
+							</div>
+							<div class="other">
+
+							</div>
+							<div class="msgserver" style="height:100px">
+								<input type="text" id="message" style="margin-left:-5px; height:50px" size="15px">
+								<input type="button" onclick="go()" style="width:50px;margin-top:10px" value="发送">
+							</div>
+						</div>
+						<div class="side_bottom"></div>
+					</div>
+				</div>
+				<div class="show_btn"><span>在线客服</span></div>
+			</div>
+			<script>
+				function go() {
+					var message = document.getElementById("message").value;
+					var tb = document.getElementById("tb");
+					if(message != "") {
+
+						let tr = document.createElement("tr");
+						let td1 = document.createElement("td");
+						tr.appendChild(td1);
+						td1.innerText = "你：" + message;
+						let tbody = document.getElementById("td")
+						tbody.appendChild(tr);
+						if(tb.rows.length == 10) {
+							tb.rows[1].remove();
+						}
+					} else {
+						alert("不能为空！！！");
+					}
+				}
+			</script>
+			<script type="text/javascript" src="js/kefu.js"></script>
+			<div style="text-align:center;">
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/kefu.js"></script>
+	<div style="text-align:center;"></div>
+		<div id="app" style="width:1800px" >
 			<el-container style="width:1800px">
 				<el-header style="background-color: #F7FAFF;">
 					<div class="header_left">
@@ -141,62 +196,7 @@
 
 			</el-container>
 
-			<!--在线客服  -->
-			<div class="scrollsidebar" id="scrollsidebar">
-				<div class="side_content">
-					<div class="side_list">
-						<div class="side_title">
-							<a title="隐藏" class="close_btn"><span>关闭</span></a>
-						</div>
-						<div class="side_center">
-							<div class="custom_service" id="sp" style="height:200px">
-								<table border="0px" width="100%" id="tb">
-									<tr>
-										<td></td>
-										<tbody id="td"></tbody>
-									</tr>
-								</table>
-							</div>
-							<div class="other">
-
-							</div>
-							<div class="msgserver" style="height:100px">
-								<input type="text" id="message" style="margin-left:-5px; height:50px" size="15px">
-								<input type="button" onclick="go()" style="width:50px;margin-top:10px" value="发送">
-							</div>
-						</div>
-						<div class="side_bottom"></div>
-					</div>
-				</div>
-				<div class="show_btn"><span>在线客服</span></div>
-			</div>
-			<script>
-				function go() {
-					var message = document.getElementById("message").value;
-					var tb = document.getElementById("tb");
-					if(message != "") {
-
-						let tr = document.createElement("tr");
-						let td1 = document.createElement("td");
-						tr.appendChild(td1);
-						td1.innerText = "你：" + message;
-						let tbody = document.getElementById("td")
-						tbody.appendChild(tr);
-						if(tb.rows.length == 10) {
-							tb.rows[1].remove();
-						}
-					} else {
-						alert("不能为空！！！");
-					}
-				}
-			</script>
-			<script type="text/javascript" src="js/kefu.js"></script>
-			<div style="text-align:center;">
-			</div>
-		</div>
-
-		<script type="text/javascript" src="js/kefu.js"></script>
-		<div style="text-align:center;">
+			
 		</div>
 	</body>
 	<style>
